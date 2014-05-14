@@ -38,7 +38,7 @@ Site structure:
 1. For Guests:
 	- What is AchieveMe?
 	- Top members
-	- <static pages>
+	- [static pages]
 2. For Members (same as for Guests +):
 	- Profile
 	- My achievements
