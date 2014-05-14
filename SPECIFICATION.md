@@ -7,24 +7,45 @@ Web app for a community / organization / group of people, for registering member
 
 User types:
 ---------------------------
-	- Guest
-	- Member
-	- Moderator
-	- Admin
+	- Guest: can register, read some static pages and visualize member's achievments and profile
+	- Member: same as guest + can edit his profile, make a submit for an achievement.
+	- Moderator: same as member + can validate, add and modify achievement. He cannot validate, modify or add his own achievements.
+	- Admin: same as member + can change users status.
 ![User type](specification/UserTypes.png "User type inheritance")
 
-Making changes and committing them
+Achievements:
+---------------------------
+	Are available the same for everybody and are categorized.
+	An achievement is represented by: image, title, description, date of realization, user who approved/addeds the achievement, date of approval.
+	Each achievement will have 0-5 points (0 - it's a symbolic achievement).
+	There are special achievements (category "special" or "bonus"), which are not computed in Σ(sum_of_all_points), but are counted in total points a member achieved.
+
+Ratio:
+---------------------------
+	Ratio for each member is computed by formula:
+	<total_points_achieved> / Σ(sum_of_all_points).
+	Ratio will be represented as a bar with 5 sections and the top members will be represented in a list with picture + ration + last achievement.
+
+Technologies:
 ----------------------------------
-1. Check if there are new updates (see previous section)
-2. make a new branch and switch to it: `git checkout -b $NAME` where `$NAME` is
-the name of the new branch
-3. do the usual `git add`, `git commit` bla (I hope this is familiar)
-4. to push, use: `git push origin $NAME` (`$NAME` is the name of the branch you
-have switched to)
-5. When you think it's time to have your changes merged into the master branch
-of the main repo, submit a new pull request:
-    - click on the "Pull request" button
-    - select the branch from your forked repo which contains the changes you
-    want to submit
-    - fill out a descriptive title and description about your changes
-    - click on "Create pull request"
+	1. For back-end will be used node.js (or a framework based on)
+	2. For front-end: bootstrap
+	3. Login/Sign in will be implemented by use of google authorization
+	4. *For later there will be a cache for achievements and ratio.
+
+Site structure:
+----------------
+For Guests:
+	- What is AchieveMe?
+	- Top members
+	- <static pages>
+For Members (same as for Guests +):
+	- Profile
+	- My achievements
+	- Submit new achievment
+For Moderators (same as for Members +):
+	- Answer a submit
+	- Add/modify/delete an achievement of a member
+For Admins (same as for Moderators +):
+	- Users list
+	- Achievements list
