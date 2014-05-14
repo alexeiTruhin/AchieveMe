@@ -35,17 +35,17 @@ Technologies:
 
 Site structure:
 ----------------
-For Guests:
+1. For Guests:
 	- What is AchieveMe?
 	- Top members
 	- <static pages>
-For Members (same as for Guests +):
+2. For Members (same as for Guests +):
 	- Profile
 	- My achievements
 	- Submit new achievment
-For Moderators (same as for Members +):
+3. For Moderators (same as for Members +):
 	- Answer a submit
 	- Add/modify/delete an achievement of a member
-For Admins (same as for Moderators +):
+4. For Admins (same as for Moderators +):
 	- Users list
 	- Achievements list
