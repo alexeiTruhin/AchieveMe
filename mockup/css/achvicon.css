@@ -1,0 +1,15 @@
+ul.achievement-list li.active .achvicon{opacity: 1;}
+
+.achvicon{ background-repeat: no-repeat; background-position: center center; display: inline-block; opacity: 0.5;
+  -webkit-background-size: 100% 100%; background-size: 100% 100%;}
+.achvicon.achvicon-normal{height: 64px; width: 64px;}
+  .achvicon.achvicon-timeTwo{background-image: url(../images/achievements/timeTwo.png);}
+  .achvicon.achvicon-timeFive{background-image: url(../images/achievements/timeFive.png);}
+  .achvicon.achvicon-timeEight{background-image: url(../images/achievements/timeEight.png);}
+  .achvicon.achvicon-timeEleven{background-image: url(../images/achievements/timeEleven.png);}
+  .achvicon.achvicon-infinity{background-image: url(../images/achievements/infinity.png);}
+  .achvicon.achvicon-babyMember{background-image: url(../images/achievements/babyMember.png);}
+  .achvicon.achvicon-member{background-image: url(../images/achievements/member.png);}
+  .achvicon.achvicon-votingMember{background-image: url(../images/achievements/votingMember.png);}
+  .achvicon.achvicon-alumnus{background-image: url(../images/achievements/alumnus.png);}
+  .achvicon.achvicon-angel{background-image: url(../images/achievements/angel.png);}
