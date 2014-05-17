@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>AchieveMe Template with Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="glyphicon glyphicon-log-in"></span>
+          </button>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">AchieveMe</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+            <button type="submit" class="btn btn-success">Sign in with Google account</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+
+        <!-- Sidebar -->
+        <div class="col-sm-3 col-md-2 sidebar">
+
+          <ul class="nav nav-sidebar">
+            <li><a href="#">What is AchieveMe</a></li>
+            <li><a href="#">Top Members</a></li>
+          </ul>
+
+          <h4> Member menu </h4>
+          <ul class="nav nav-sidebar">
+            <li><a href="">Profile</a></li>
+            <li><a href="">My achievements</a></li>
+            <li><a href="">Submit new Achievement</a></li>
+          </ul>
+
+          <h4> Moderator menu </h4>
+          <ul class="nav nav-sidebar">
+            <li><a href="">Answer to submits <span class="badge">5</span></a></li>
+            <li><a href="">Member's Achievements</a></li>
+          </ul>
+
+          <h4>Admin menu</h4>
+          <ul class="nav nav-sidebar">
+            <li><a href="">Users list</a></li>
+            <li class="active"><a href="">Achievements list</a></li>
+          </ul>
+        </div>
+
+        <!-- Content -->
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Achievements' Settings</h1>
+
+          <!-- Achievements' Settings Tab -->
+          <div class="achvsetting achvsetting-tab">
+            <ul id="achvTab" class="nav nav-tabs">
+              <li class="active"><a href="#setting" data-toggle="tab">Settings</a></li>
+              <li class=""><a href="#viewAchv" data-toggle="tab">View achievments</a></li>
+            </ul>
+            <div id="achvTabContent" class="tab-content">
+
+              <!-- Achievements' Settings -->
+              <div class="tab-pane fade active in" id="setting">
+                <h4>Add an achievement</h4>
+                <form role="form">
+                  <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" class="form-control" id="addCategory" placeholder="Title">                   
+                  </div>
+                  <div class="form-group">
+                    <label> Number of Points </label>
+                    <select class="form-control">
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>                 
+                  </div>
+                  <div class="form-group">
+                    <label>Select category or add new one</label>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="category" id="optionsRadios1" value="fromDb" checked>
+                        <select class="form-control">
+                          <option>Time in BEST</option>
+                          <option>Membership</option>
+                        </select>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="category" id="optionsRadios2" value="new">
+                        <input type="text" class="form-control" id="addCategory" placeholder="New Category">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputFile">Image input</label>
+                    <p class="bg-info">Image should be of .png type and of size 128x128 px</p>
+                    <input type="file" id="exampleInputFile">
+                    <p class="help-block">Example block-level help text here.</p>
+                  </div>
+                  <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+
+
+                <h4>Delete an achievement</h4>
+                <form role="form">
+                  <div class="form-group">
+                    <label>Select category</label>
+                    <select class="form-control">
+                      <option>Time in BEST</option>
+                      <option>Membership</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Select achievement</label>
+                    <select class="form-control">
+                      <option>babyMember</option>
+                      <option>member</option>
+                      <option>votingMember</option>
+                      <option>alumnus</option>
+                    </select>
+                  </div>
+                  <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+                <div class="clearfix"></div>
+              </div>
+
+              <!-- View Achievements -->
+              <div class="tab-pane fade" id="viewAchv">
+                <h3> Time in BEST </h3>
+                <ul class="achievement-list">
+                  <li class="achievement active">
+                    <span class="achvicon achvicon-normal achvicon-timeTwo"></span>
+                    <span class="title">Half a year </span> 
+                    <span class="badge">+3 points</span>
+                  </li>
+                  <li class="achievement">
+                    <span class="achvicon achvicon-normal achvicon-timeFive"></span>
+                    <span class="title">One year</span>
+                    <span class="badge">+1 points</span>
+                  </li>
+                  <li class="achievement">
+                    <span class="achvicon achvicon-normal achvicon-timeEight"></span>
+                    <span class="title">Two years</span>
+                    <span class="badge">+2 points</span>
+                  </li>
+                  <li class="achievement">
+                    <span class="achvicon achvicon-normal achvicon-infinity"></span>
+                    <span class="title">Three+ years</span>
+                    <span class="badge">+5 points</span>
+                  </li>
+                </ul>
+
+                <h3> Membership </h3>
+                <ul class="achievement-list">
+                  <li class="achievement active">
+                    <span class="achvicon achvicon-normal achvicon-babyMember"></span>
+                    <span class="title">Baby Member </span> 
+                    <span class="badge">+3 points</span>
+                  </li>
+                  <li class="achievement active">
+                    <span class="achvicon achvicon-normal achvicon-member"></span>
+                    <span class="title">Member</span>
+                    <span class="badge">+3 points</span>
+                  </li>
+                  <li class="achievement">
+                    <span class="achvicon achvicon-normal achvicon-votingMember"></span>
+                    <span class="title">Voting Member</span>
+                    <span class="badge">+2 points</span>
+                  </li>
+                  <li class="achievement">
+                    <span class="achvicon achvicon-normal achvicon-alumnus"></span>
+                    <span class="title">Alumnus</span>
+                    <span class="badge">+5 points</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/tab.js"></script>
+  </body>
+</html>
