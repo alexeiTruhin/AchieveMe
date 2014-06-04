@@ -9,10 +9,10 @@ router.get('/', function(req, res) {
 /* GET Userlist page. */
 router.get('/userlist', function(req, res) {
     var db = req.db;
-    var collection = db.get('user');
+    var collection = db.get('usercollection');
     collection.find({},{},function(e,docs){
         res.render('userlist', {
-            "users" : docs
+            "userlist" : docs
         });
     });
 });
@@ -34,7 +34,7 @@ router.post('/adduser', function(req, res) {
     var userPermission = req.body.userpermission;
 
     // Set our collection
-    var collection = db.get('user');
+    var collection = db.get('usercollection');
 
     // Submit to the DB
     collection.insert({
