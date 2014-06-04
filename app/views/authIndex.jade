@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    if !user
+        p
+            a(href="/auth/") Home
+            |  | 
+            a(href="/auth/login") Log in
+    else
+        p
+            a(href="/auth/") Home
+            |  | 
+            a(href="/auth/account") Account
+            |  | 
+            a(href="/auth/logout") Log out          
+    if !user
+        h2 Welcome! Please log in.
+    else
+        h2 Hello, #{user.displayName}
