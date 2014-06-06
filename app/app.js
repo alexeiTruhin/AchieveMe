@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session')
 
-// New Code
+// DB and Passport
 var mongo = require('mongodb');
 var monk = require('monk');
 var db = monk('localhost:27017/achieveme');
@@ -17,6 +17,9 @@ var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var auth = require('./routes/auth');
+var profile = require('./routes/profile');
+var article = require('./routes/article');
+var error = require('./routes/error');
 
 var app = express();
 // var auth = express.Router();
@@ -26,7 +29,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.use(favicon());
-app.use(logger('dev'));
+app.use(logger());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
@@ -47,28 +50,34 @@ app.use(function(req,res,next){
 app.use('/', routes);
 app.use('/users', users);
 app.use('/auth', auth);
+app.use('/profile', profile)
+app.use('/article', article)
+app.use('/error', error)
 
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
-    var err = new Error('Not Found');
+/*    var err = new Error('Not Found');
     err.status = 404;
-    next(err);
+    next(err);*/
+    res.redirect("/error");
 });
 
 /// error handlers
 
+/*
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-    app.use(function(err, req, res, next) {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
+app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+        message: err.message,
+        error: err
     });
+});
 }
+*/
 
 // production error handler
 // no stacktraces leaked to user

@@ -54,7 +54,10 @@ router.get('/google',
 router.get('/google/callback', 
   passport.authenticate('google', { failureRedirect: '/login' }),
   function(req, res) {
-    res.redirect('/auth');
+    // Define User permission. If new, add to DB with permission 0.
+    defineUserPermission(req, res);
+
+    res.redirect('/profile');
 });
 // Passport && Google stuff END
 // ----------------------------
@@ -64,22 +67,41 @@ router.get('/', function(req, res) {
   res.render('authIndex', { title: 'Express auth', "user": req.user });
 });
 
-router.get('/account', ensureAuthenticated, function(req, res){
-  res.render('account', { "user": req.user });
-});
-
-router.get('/login', function(req, res){
-  res.render('login', { "user": req.user });
-});
-
 router.get('/logout', function(req, res){
   req.logout();
   res.redirect('/');
 });
 
-function ensureAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) { return next(); }
-  res.redirect('/auth/login');
+// ----- Functions ----
+
+function defineUserPermission(req, res) {
+  var db = req.db;
+  // Set our collection
+  var collection = db.get('usercollection');
+
+  // Submit to the DB
+  collection.find({"google_id": req.user.id}, {}, function(e, doc){
+    if (typeof doc !== 'undefined' && doc.length > 0) {
+      req.user.permission = doc[0].permission;
+    } else {
+      req.user.permission = 0; // User permission by default is 0 (guest)
+      // Submit to the DB
+      collection.insert({
+          "google_id" : req.user.id,
+          "permission" : 0, // User permission by default is 0 (guest)
+          "email" : req.user.emails[0].value,
+          "name" : req.user.displayName
+      }, function (err, doc) {
+          if (err) {
+            // If it failed, return error
+            res.send("There was a problem adding the information to the database.");
+          }
+          else {
+            console.log("Why would you do that?!?");
+          }
+      }); 
+    }
+  });  
 }
 
 module.exports = router;

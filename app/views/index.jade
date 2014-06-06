@@ -1,5 +1,10 @@
-extends layout
+extends layout  
 
 block content
-  h1= title
-  p Welcome to #{title}
+  if user
+    p ID: #{user.id}
+    p name: #{user.displayName}
+    p email: #{user.emails[0].value}
+  else
+    h1= title
+    p Welcome to #{title}

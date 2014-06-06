@@ -1,0 +1,63 @@
+extends layout  
+
+block content
+
+  h1 AchieveMe
+  p
+    |(see source code on 
+    a(href="https://github.com/alexeiTruhin/AchieveMe") github
+    |)
+
+  h2 Description
+  p Web app for a community / organization / group of people, for registering members achievments.
+
+  h3 User types:
+  ul
+    li
+      |Guest: can register, read some static pages and visualize member's achievments and profile
+    li
+      |Member: same as guest + can edit his profile, make a submit for an achievement.
+    li
+      |Moderator: same as member + can validate, add and modify achievement. He cannot validate, modify or add his own achievements.
+    li
+      |Admin: same as member + can change users status.
+  img(src="/images/specification/UserTypes.png", title="User type inheritance")
+
+  h3 Achievements:
+  p Are available the same for everybody and are categorized.
+  p An achievement is represented by: image, title, description, date of realization, user who approved/addeds the achievement, date of approval.
+  p Each achievement will have 0-5 points (0 - it's a symbolic achievement).
+  p There are special achievements (category "special" or "bonus"), which are not computed in Σ(sum_of_all_points), but are counted in total points a member achieved.
+
+  h3 Ratio:
+  p Ratio for each member is computed by formula:
+  p &lt;total_points_achieved&gt; / Σ(sum_of_all_points).
+  p Ratio will be represented as a bar with 5 sections and the top members will be represented in a list with picture + ration + last achievement.
+
+  h3 Technologies:
+  ol
+    li For back-end will be used node.js (or a framework based on)[update: I'm using expressjs v4]
+    li For front-end: bootstrap
+    li Login/Sign in will be implemented by use of google authorization [update: passportjs for oauth2]
+    li *Later there will be a cache for achievements and ratio.
+
+  h3 Site structure:
+  ol
+    li For Guests:
+      ul
+        li What is AchieveMe?
+        li Top members
+        li [static pages]
+    li For Members (same as for Guests +):
+      ul
+        li Profile
+        li My achievements
+        li Submit new achievment
+    li For Moderators (same as for Members +):
+      ul
+        li Answer a submit
+        li Add/modify/delete an achievement of a member
+    li For Admins (same as for Moderators +):
+      ul
+        li Users list
+        li Achievements list
