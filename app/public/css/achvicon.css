@@ -1,0 +1,20 @@
+.achievement.active .achvicon{opacity: 1;}
+
+.achvicon{ background-repeat: no-repeat; background-position: center center; display: inline-block; opacity: 0.5;
+  -webkit-background-size: 100% 100%; background-size: 100% 100%;}
+.achvicon.achvicon-normal{height: 64px; width: 64px;}
+  .achvicon.achvicon-timeTwo{background-image: url(../images/achievements/timeTwo.png);}
+  .achvicon.achvicon-timeFive{background-image: url(../images/achievements/timeFive.png);}
+  .achvicon.achvicon-timeEight{background-image: url(../images/achievements/timeEight.png);}
+  .achvicon.achvicon-timeEleven{background-image: url(../images/achievements/timeEleven.png);}
+  .achvicon.achvicon-infinity{background-image: url(../images/achievements/infinity.png);}
+  .achvicon.achvicon-babyMember{background-image: url(../images/achievements/babyMember.png);}
+  .achvicon.achvicon-member{background-image: url(../images/achievements/member.png);}
+  .achvicon.achvicon-votingMember{background-image: url(../images/achievements/votingMember.png);}
+  .achvicon.achvicon-alumnus{background-image: url(../images/achievements/alumnus.png);}
+  .achvicon.achvicon-angel{background-image: url(../images/achievements/angel.png);}
+
+.achievement{background-color: #f9f9f9; border: 1px solid #fff; color: #ccc; float: left; font-size: 10px; line-height: 1.4; 
+    margin: 0 0 12px; padding: 10px;  text-align: center; width: 100%;}
+.achievement.active{background-color: #E8E5E6; color: #E87F0E; }
+.achievement .title{ display: block; font-size: 14px; }

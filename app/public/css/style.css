@@ -1,0 +1,65 @@
+@import url("achvicon.css");
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {padding-top: 50px;}
+
+/* Sidebar; Hide for mobile, show later */
+.sidebar {display: none;}
+@media (min-width: 768px) {
+  .sidebar {background-color: #f5f5f5; border-right: 1px solid #eee; display: block; overflow-x: hidden; overflow-x: hidden; 
+    padding: 20px; position: fixed; bottom: 0; left: 0; top: 51px; z-index: 1000;}
+}
+
+/* Sidebar navigation */
+.nav-sidebar {margin: 0 -21px 20px -20px; }/* 20px padding + 1px border */
+  .nav-sidebar > li > a {padding: auto 20px;}
+    .nav-sidebar > .active > a {background-color: #428bca; color: #fff;}
+      .nav-sidebar > .active > a:hover {background-color: #428bca; color: #fff;}
+
+/* Nav Head */
+.navbar-header {}
+  .navbar-header button{color:#fff;}
+
+/* Main Content */
+
+.main { padding: 20px;}
+@media (min-width: 768px) {
+  .main {padding-right: 40px; padding-left: 40px;}
+}
+  .main .page-header { margin-top: 0;}
+
+/* Achievement List */
+ul.achievement-list{ list-style: none; padding: 0 0 0 0; }
+  ul.achievement-list li{ width: 25%; }
+    ul.achievement-list li .title{ display: block; font-size: 14px; }
+    
+/* Ratio */
+.ratio{position: relative;}
+.ratio, .ratio .ratio-progress{border-radius: 4px; height: 20px;}
+  .ratio .ratio-progress{background: #f0ad4e; position: absolute; left: 0; top: 0; z-index: 10; }
+  .ratio .ratio-bar{float: left; height: 100%; position: relative; z-index: 100; width: 20%;
+    border: 1px solid #E87F0E;}
+    .ratio .ratio-bar:first-of-type{border-radius: 4px 0 0 4px;}
+    .ratio .ratio-bar:last-of-type{border-radius: 0 4px 4px 0;}
+
+/* Members table */
+.members-table{display: table;}
+.member{}
+.member.member-ratio{display: table-row;}
+  .member.member-ratio > div {display: table-cell; float: none; vertical-align: middle;}
+
+.member-top{}
+  .member-top > div {}
+  .member-top p{border: 1px solid #f0ad4e; text-align: center;}
+  /* Avatar */
+  .avatar{}
+    .avatar img{background: #E8E5E6; border: 1px solid #E8E5E6;}
+  .member .avatar{background: #E8E5E6;display: block; text-align: center;}
+  .member .avatar img{height: 48px; width: 48px;}
+  @media (min-width: 768px) {
+    .member .avatar img{height: 100px; width: 100px;}
+  }
+
+/* Achievements setting */
+.achvsetting{}
+  .achvsetting form{ margin: 0 0 40px; padding: 0 0 0 24px;}

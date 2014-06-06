@@ -1,0 +1,6 @@
+extends layout	
+
+block content
+    p ID: #{user.id}
+    p name: #{user.displayName}
+    p email: #{user.emails[0].value}

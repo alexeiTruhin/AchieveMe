@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h1.
+    User List
+  table(style="width: 100%;")
+    tr
+      th Name
+      th Email
+      th Permission
+    each users in userlist
+      tr
+          td #{users.name}
+          td #{users.email}
+          td 
+            form#formModifyUserPermission(name="modifyUserPermission", method="post", action="/users/modify")
+              select(name="usersPermission")
+                option(value="0", selected=users.permission===0?true:false) Guest
+                option(value="1", selected=users.permission===1?true:false) Member
+                option(value="2", selected=users.permission===2?true:false) Moderator
+                option(value="3", selected=users.permission===3?true:false) Admin
+              input#inputUserName(type="hidden", name="usersGoogleId", value=users.google_id)
+              button.btn.btn-xs.btn-warning(type="sumbit") Change
+      

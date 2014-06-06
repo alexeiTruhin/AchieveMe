@@ -1,0 +1,32 @@
+//- Static Pages
+ul.nav.nav-sidebar
+  li
+    a(href='/article/achieveMe') What is AchieveMe
+  li.active
+    a(href='#') Top Members
+if (user)
+  if (user.permission && user.permission > 0)
+    h4  Member menu 
+    ul.nav.nav-sidebar
+      li
+        a(href='/profile') Profile
+      li
+        a(href='') My achievements
+      li
+        a(href='') Submit new Achievement
+  if (user.permission && user.permission > 1)
+    h4  Moderator menu 
+    ul.nav.nav-sidebar
+      li
+        a(href='')
+          | Answer to submits
+          span.badge 5
+      li
+          a(href='') Member's Achievements
+  if (user.permission && user.permission > 2)
+    h4 Admin menu
+    ul.nav.nav-sidebar
+      li
+        a(href='/users') Users list
+      li
+        a(href='') Achievements list
